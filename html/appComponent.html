@@ -1,0 +1,42 @@
+<div id="wrapper">
+
+    <div class="header">
+        <div class="row">
+        <div class="col-md-2" > 
+        
+        <img src="html/css/cat_toast_5.jpg" alt="logo" />
+        </div>
+
+        <div class="col-md-2" [hidden] ="!log.length>0" > 
+        <button type="button" class="btn btn-default" style=" margin-top: 7%;"  >Courses</button>
+        </div>
+        <div class="col-md-6"> 
+       
+        </div>
+        <div class="col-md-2"  > 
+        User login 
+        <p>{{log}}</p>
+
+        </div>
+         </div>
+
+<div class="row"> 
+<div class="col-md-4" > 
+  <a routerLink="/" routerLinkActive="active">Login</a>
+  <a routerLink="/courses" routerLinkActive="active">Courses</a>
+  <a [routerLink]="['courses', 'new']" routerLinkActive="active"> Add course</a> 
+  <a [routerLink]="['courses', '12']"  routerLinkActive="active"> Edit course</a>
+</div>
+ </div>
+    </div>
+ 
+
+   <router-outlet></router-outlet> 
+ 
+
+ <div id="footer">
+        Copyright 2017
+    </div>
+
+  </div>
+

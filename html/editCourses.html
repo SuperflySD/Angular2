@@ -1,0 +1,93 @@
+<form #myForm="ngForm" >
+    <div class="row">
+        <div class="col-md-3" style="text-align: right">
+            <h1>Title</h1>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3" style="text-align: left">
+            <input class="form-control" type="text" [(ngModel)] = "cm.name" required  name="title">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="text-align: right">
+            <h1>Description</h1>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5" style="text-align: left">
+            <div class="form-group">
+                <textarea class="form-control" rows="2" required [(ngModel)] = "cm.description" name="description"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="text-align: right">
+            <h1>Date</h1>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2" style="text-align: left">
+            <input class="form-control" type="text" required [(ngModel)]="fdate" (keypress)="onKeyPress($event)"  name="date" id="fd">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="text-align: right">
+            <h1>Duration</h1>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1" style="text-align: left">
+            <input class="form-control" type="number" [(ngModel)]="dur" name="duration"required>
+        </div>
+        <div class="col-md-2" style="text-align: left; height:34px">
+            <h1 style=" font-size: 14px; padding: 5px ">  {{dur | duration}} </h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-7">
+            <section class="container">
+                <div>
+                    <select id="leftValues" size="5" multiple>
+                        <option>Smith</option>
+                        <option>Johnson</option>
+                        <option>Williams</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="button" id="btnLeft" value="&lt;&lt;" />
+                    <input type="button" id="btnRight" value="&gt;&gt;" style="margin-top: 35px" />
+                </div>
+                <div>
+                    <select id="rightValues" size="5" multiple name= "authors">
+                        <option>Miller</option>
+                        <option>Brown</option>
+                    </select>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-1" style="text-align:left; padding-left:30px">
+            <button type="button" class="btn btn-default"  (click)="onSubmit(myForm)">Save</button>
+        </div>
+
+        <div class="col-md-2" style="text-align:center; padding-left:70px">
+            <button type="submit" class="btn btn-default" [routerLink]="['/courses']">Cancel</button>
+        </div>
+    </div>
+
+</form>

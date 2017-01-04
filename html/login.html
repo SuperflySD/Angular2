@@ -1,0 +1,36 @@
+
+<div class="container"style="margin-left:10px;">
+    <div class="row" id="pwd-container" style="width:350px;">
+        <div class="col-md-4" style="width:90%;">
+            <section class="login-form">
+                <form method="post" action="#" #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)">
+                    
+                    <input type="text" name="login" placeholder="Login" class="form-control input-lg" [(ngModel)]="login" #mlogin="ngModel"
+                           required pattern="[a-zA-Z]{1,30}" (ngModelChange)="onChangel()" (blur)="blur(1)" (focus)="focus(1)"id="l" />   <br /> <br>
+                   
+                     <input type="password" name="password" [(ngModel)]="password" #mpass="ngModel" class="form-control input-lg"
+                           placeholder="Password" required pattern="[a-zA-Z0-9]{1,10}" (ngModelChange)="onChangep()" (blur)="blur(2)" (focus)="focus(2)" id="p" /><br>
+                    
+                    <div [hidden]="formValid" class="alert alert-danger">
+                        Wrong login or password
+                    </div><br>
+                    
+                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block"
+                            [disabled]="loginEmpty||passwordEmpty" id="btn">
+                        Enter
+                    </button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <span [hidden]="!loginEmpty || mlogin.untouched||lfocus" class="alert alert-danger" id="q"> Enter login</span>
+    <span [hidden]="!passwordEmpty || mpass.untouched||pfocus" class="alert alert-danger">Enter password</span>
+</div>
+
+
+
+<!-- <p>---fff--</p>
+<div> {{myForm.value.login}}</div>
+<div> {{login}}</div>
+<div> {{bvisible}}</div> -->
+

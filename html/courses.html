@@ -1,0 +1,105 @@
+
+
+
+   <div class="row">
+    <div class="col-md-2" > 
+        <input class="form-control" id="inputdefault" type="text" #filterT placeholder="Search">
+     </div>
+<div class="col-md-8"  >
+     <button type="button" class="btn btn-primary" id="btnfind" (click)="filterV=filterT.value" >Find</button>
+
+</div>
+<div class="col-md-2"  >
+     <button type="button" class="btn btn-primary" id="btnadd" [routerLink]="['/courses', 'new']">Add Course</button>
+
+</div>
+
+</div>
+
+<ul  *ngFor=" let course of coursesList |filter:filterV" style="padding: 0px " >
+
+    <div class="course">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2" style="text-align: right; padding-right: 0px">
+                        <div class="course-data">
+                            <span class="course-block">
+                       {{course.name}}
+                    </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-md-2" style="text-align: left; padding-left: 0px">
+                        <div class="course-data ">
+                            <span class="course-block">
+                   №{{coursesList.indexOf (course)+1}}
+                    </span>
+                        </div>
+                    </div>
+                   
+                    <div class="col-sm-3 col-md-3 " >
+                        <div class="course-data">
+                            <span class="course-block">
+                    {{course.duration | duration}}
+                    </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 ">
+                        <div class="course-data">
+                            <span class="course-block">
+                     {{course.date| date}}
+                    </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-10" id="text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-default" [routerLink]="['/courses', coursesList.indexOf (course)]">
+                    Edit Course</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" 
+                    (click) ="del=coursesList.indexOf(course)" >    Delete</button>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm" style="width: 350px">
+      <div class="modal-content">
+        <div class="modal-header">
+        
+          <h4 class="modal-title">Confirm deleting</h4>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" 
+          (click) ="ondelete()">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" style ="margin-bottom: 15px;" 
+           >Cancel</button>
+        </div>
+     
+         
+        
+      </div>
+    </div>
+  </div>
+
+</ul>
+
+    
