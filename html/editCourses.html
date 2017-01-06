@@ -6,7 +6,7 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-3" style="text-align: left">
-            <input class="form-control" type="text" [(ngModel)] = "cm.name" required  name="title">
+            <input class="form-control" type="text" [(ngModel)] = "cm.name" (ngModelChange)="onNameChange($event)" required  name="title">
         </div>
     </div>
 
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-5" style="text-align: left">
             <div class="form-group">
-                <textarea class="form-control" rows="2" required [(ngModel)] = "cm.description" name="description"></textarea>
+                <textarea class="form-control" rows="3" required [(ngModel)] = "cm.description" name="description"></textarea>
             </div>
         </div>
     </div>
@@ -30,7 +30,8 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-2" style="text-align: left">
-            <input class="form-control" type="text" required [(ngModel)]="fdate" (keypress)="onKeyPress($event)"  name="date" id="fd">
+            <input class="form-control" type="text" required [(ngModel)]="cm.date" 
+            (keypress)="onKeyPress($event)"  name="date" id="fd">
         </div>
     </div>
 
@@ -41,10 +42,10 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-1" style="text-align: left">
-            <input class="form-control" type="number" [(ngModel)]="dur" name="duration"required>
+            <input class="form-control" type="number" [(ngModel)]="cm.duration" name="duration"required>
         </div>
         <div class="col-md-2" style="text-align: left; height:34px">
-            <h1 style=" font-size: 14px; padding: 5px ">  {{dur | duration}} </h1>
+            <h1 style=" font-size: 14px; padding: 5px ">  {{cm.duration | duration}} </h1>
         </div>
     </div>
 

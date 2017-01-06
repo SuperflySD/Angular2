@@ -9,7 +9,7 @@ import { AppComponent }     from './app.component';
 import { LoginComponent }   from './login.component';
 import { CoursesComponent }   from './courses.component';
 import { EditCoursesComponent }   from './edit.courses.component';
-import { NewCoursesComponent}   from './new.courses.component';
+import { HttpService}   from './new.courses.component';
 import { DurationPipe}   from './duration.pipe';
 import { FilterPipe}   from './filter.pipe';
 import { MockCoursesService}   from './mock-courses';
@@ -22,12 +22,13 @@ const appRoutes: Routes =[
     { path: '', component: LoginComponent},
     { path: 'courses', component: CoursesComponent,  pathMatch:'full'},
     { path: 'courses/:id', component: EditCoursesComponent},
+    { path: 'query', component: HttpService},
     { path: '**', component: LoginComponent }
 ];
  
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
-    declarations: [ AppComponent, LoginComponent, CoursesComponent, EditCoursesComponent, NewCoursesComponent, DurationPipe,
+    declarations: [ AppComponent, LoginComponent, CoursesComponent, EditCoursesComponent, HttpService, DurationPipe,
     FilterPipe],
     providers: [MockCoursesService, LoginComponent],
     bootstrap:    [ AppComponent ]

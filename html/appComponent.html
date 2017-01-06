@@ -1,33 +1,35 @@
 <div id="wrapper">
-
     <div class="header">
         <div class="row">
         <div class="col-md-2" > 
-        
-        <img src="html/css/cat_toast_5.jpg" alt="logo" />
+        <a routerLink="/" routerLinkActive="active" style="padding:0px; width:71px;">
+        <img src="html/css/cat_toast_5.jpg" alt="logo"/>
+        </a>
         </div>
 
-        <div class="col-md-2" [hidden] ="!log.length>0" > 
-        <button type="button" class="btn btn-default" style=" margin-top: 7%;"  >Courses</button>
+<div class="col-md-3" > 
+</div>
+        <div class="col-md-2" [hidden] ="!log.length>0" style="text-align: right;"> 
+        <button type="button" class="btn btn-default" style=" margin-top: 6%;" routerLink="/courses" (click)="chosenC=''" >Courses</button>
         </div>
-        <div class="col-md-6"> 
-       
+      
+        <div class="col-md-3" style=" text-align: left;" > 
+       <p style=" margin-top: 21px;"> Course: {{chosenC}}</p>
         </div>
         <div class="col-md-2"  > 
-        User login 
-        <p>{{log}}</p>
+      <p style=" margin-top: 21px;">  User login: {{log}}</p>
 
         </div>
          </div>
 
-<div class="row"> 
+<!-- <div class="row"> 
 <div class="col-md-4" > 
   <a routerLink="/" routerLinkActive="active">Login</a>
   <a routerLink="/courses" routerLinkActive="active">Courses</a>
   <a [routerLink]="['courses', 'new']" routerLinkActive="active"> Add course</a> 
-  <a [routerLink]="['courses', '12']"  routerLinkActive="active"> Edit course</a>
+  <a [routerLink]="['query']"  routerLinkActive="active"> Edit course</a>
 </div>
- </div>
+ </div> -->
     </div>
  
 

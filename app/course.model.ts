@@ -7,6 +7,7 @@ export class CourseModel {
  date:Date;
  duration:number;
  authors:string[];
+ description:string;
     
 
 

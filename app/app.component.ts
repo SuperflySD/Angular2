@@ -22,7 +22,7 @@ styles: [`h1 {
     text-decoration: none;
     margin-top: 0px;
     display: inline-block;
-    background-color: #eee;
+   /* background-color: #eee;*/
     border-radius: 4px;
     width:100px;
     
@@ -32,7 +32,8 @@ styles: [`h1 {
   }
   a:hover {
     color: #039be5;
-    background-color: #CFD8DC;
+   /*  background-color: #CFD8DC;*/
+    border-right: solid black 1px;
   }
   a.active {
     color: #039be5;
@@ -60,10 +61,11 @@ styles: [`h1 {
     float: left;
     width: 70px;
     height: 70px;
-    background: #555;
     border: solid grey 1px;
   }
 
+  
+ 
 `],
 // styleUrls: ['html/css/styles.css']
 
@@ -71,11 +73,15 @@ styles: [`h1 {
 
 export class AppComponent implements OnInit{ 
  
- log:string = "";
+log:string = "";
+//@Input()
+ chosenC: string = "";
  
-
 getlogin(login:string) {
 this.log = login;
+}
+getchosenC(chos:string){
+  this.chosenC=chos;
 }
 
  ngOnInit(){
