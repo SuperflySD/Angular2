@@ -18,7 +18,8 @@
         </div>
         <div class="col-md-2"  > 
       <p style=" margin-top: 21px;">  User login: {{log}}</p>
-
+      <a [routerLink]="['/']"  routerLinkActive="active" *ngIf = "log" 
+      (click) = "AppComponent.staticlog = ''"> Log out</a>
         </div>
          </div>
 
@@ -31,7 +32,7 @@
 </div>
  </div> -->
     </div>
- 
+ <a routerLink="/query"  routerLinkActive="active"> Query</a>
 
    <router-outlet></router-outlet> 
  

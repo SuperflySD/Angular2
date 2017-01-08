@@ -10,7 +10,7 @@ export class LoginService {
     constructor(private http: Http) {
     }
 
-    login(login : string, password:string): Observable<User> {
+    login(login : string, password:string): any {
         if (login == "q"&& password=="q") 
           return new Observable(obs1 => obs1.next(new User("qwerty","as")));
         else

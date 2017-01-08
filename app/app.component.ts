@@ -74,11 +74,13 @@ styles: [`h1 {
 export class AppComponent implements OnInit{ 
  
 log:string = "";
+static staticlog ="";
 //@Input()
  chosenC: string = "";
  
 getlogin(login:string) {
 this.log = login;
+AppComponent.staticlog = login;
 }
 getchosenC(chos:string){
   this.chosenC=chos;
